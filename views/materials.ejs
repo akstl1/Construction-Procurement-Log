@@ -197,6 +197,17 @@
         <td class="calculated-table-field"> <span contenteditable="true">7</span> </td>
         <td> <span contenteditable="true">7</span> </td>
       </tr>
+      <% table.forEach(function(item) { %>
+        <tr>
+          <td><input type="checkbox" name="" value=""></td>
+
+          <td> <span contenteditable="true"><%= item.Item %></span> </td>
+          <td> <span contenteditable="true"><%= item.specSection %></span> </td>
+          <td> <span contenteditable="true"><%= item.responsibleSubcontractor %></span> </td>
+
+        </tr>
+        
+      <% }) %>
 
     </table>
   </section>

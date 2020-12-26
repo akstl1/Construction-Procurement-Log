@@ -10,28 +10,6 @@ const { resolveInclude } = require("ejs");
 
 const app = express();
 
-// const main = async () => {
-//     const pool = new sql.ConnectionPool({
-//       server: process.env.SERVER,
-//       database: process.env.DATABASE,
-//       options: {
-//         trustedConnection: true
-//       }
-//     });
-  
-//     await pool.connect();
-  
-//     const request = new sql.Request(pool);
-  
-//     const query = `SELECT * from Materials1`;
-  
-//     const result = await request.query(query);
-  
-//     console.dir(result);
-    
-//   };
-//   main();
-
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -75,10 +53,9 @@ app.get("/", function(req,res){
           });
      });
  }
- getCord().then(() => console.log(table));
+ getCord().then(() => res.render("materials", {table: table}));
     
-    
- res.render("materials");
+//  res.render("materials");
 
     
     // var tbl = "";
